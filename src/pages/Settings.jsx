@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Page3D, TiltCard } from '../components/fx.jsx';
 import { useAuth } from '../context/AuthContext.jsx';
 import { useTheme } from '../context/ThemeContext.jsx';
-import api from '../services/api.js';
+import api, { API_BASE_URL } from '../services/api.js';
 
 export default function Settings() {
   const { user } = useAuth();
@@ -75,7 +75,7 @@ export default function Settings() {
         </TiltCard>
         <TiltCard className="panel" glow="#a78bfa">
           <h3>Backend</h3>
-          <p className="muted">API: <code>{import.meta.env.VITE_API_URL || 'http://localhost:8080/api'}</code></p>
+          <p className="muted">API: <code>{API_BASE_URL}</code></p>
           <p className="muted">Run backend with <code>mvn spring-boot:run</code> + MySQL <code>smart_task_manager</code>.</p>
         </TiltCard>
       </div>
